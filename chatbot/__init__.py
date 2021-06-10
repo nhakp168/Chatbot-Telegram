@@ -1,7 +1,7 @@
 from pyrogram import Client, errors
 
 
-API_ID = Config.API_ID
+API_ID = Config.APP_ID
 API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
 BOT_ID = Config.BOT_ID
