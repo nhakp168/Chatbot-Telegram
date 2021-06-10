@@ -1,11 +1,11 @@
-from thebot import dankbot
+from chatbot import cb as me
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from chatbot.utils.errors import capture_err
 
 
-@cb.on_message(~filters.me & filters.command('start', prefixes='/'), group=8)
+@me.on_message(~filters.me & filters.command('start', prefixes='/'), group=8)
 @capture_err
 async def start(_, message):
    if message.chat.type == "private":
