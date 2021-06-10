@@ -4,3 +4,4 @@ aiohttp
 python-arq
 google_trans_new
 emoji
+tgcrypto
