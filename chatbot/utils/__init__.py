@@ -24,7 +24,7 @@ def admins_only(func: Callable) -> Coroutine:
 
     return wrapper
   
-  async def edit_or_reply(message, text, parse_mode="md"):
+async def edit_or_reply(message, text, parse_mode="md"):
     if message.from_user.id:
         if message.reply_to_message:
             kk = message.reply_to_message.message_id
