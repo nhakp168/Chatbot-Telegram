@@ -147,7 +147,13 @@ async def chatbot_function(client, message):
 
 
 @cb.on_message(
-    filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot & group=8
+    filters.text
+    & filters.reply
+    & ~filters.bot
+    & ~filters.edited
+    & ~filters.via_bot
+    & ~filters.forwarded,
+    group=8,
 )
 async def sasuke(client, message):
     msg = message.text
