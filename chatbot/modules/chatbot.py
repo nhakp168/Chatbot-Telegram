@@ -146,14 +146,8 @@ async def chatbot_function(client, message):
             return
 
 
-@cb.on_message(
-    filters.text
-    & filters.reply
-    & ~filters.bot
-    & ~filters.edited
-    & ~filters.via_bot
-    & ~filters.forwarded,
-    group=2,
+@kai.on_message(
+    filters.text & ~filters.edited & filters.reply & ~filters.bot
 )
 async def lol(client, message):
     msg = message.text
