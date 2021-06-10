@@ -3,11 +3,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from chatbot.utils.errors import capture_err
-
-
 @me.on_message(~filters.me & filters.command('start', prefixes='/'), group=8)
-@capture_err
 async def start(_, message):
    if message.chat.type == "private":
      if len(message.text.split()) >= 2:
