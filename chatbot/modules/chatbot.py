@@ -53,7 +53,7 @@ en_chats = []
     & ~filters.edited
     & ~filters.via_bot
     & ~filters.forwarded,
-    group=2,
+    group=8,
 )
 async def chatbot_function(client, message):
     if not message.reply_to_message:
@@ -147,7 +147,7 @@ async def chatbot_function(client, message):
 
 
 @cb.on_message(
-    filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
+    filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot & group=8
 )
 async def sasuke(client, message):
     msg = message.text
