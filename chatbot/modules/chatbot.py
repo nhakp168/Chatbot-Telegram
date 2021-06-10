@@ -11,6 +11,7 @@ from google_trans_new import google_translator
 from pyrogram import filters
 
 from chatbot import BOT_ID
+from chatbot.utils.arh import arq
 from chatbot.utils.pluginhelper import admins_only, edit_or_reply
 from chatbot import cb
 
