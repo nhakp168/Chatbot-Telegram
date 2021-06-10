@@ -146,7 +146,7 @@ async def chatbot_function(client, message):
             return
 
 
-@kai.on_message(
+@cb.on_message(
     filters.text & ~filters.edited & filters.reply & ~filters.bot
 )
 async def lol(client, message):
