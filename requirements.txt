@@ -2,3 +2,4 @@ pyrogram
 aiohttp
 google_trans_new
 motor
+emoji
