@@ -12,7 +12,7 @@ from pyrogram import filters
 
 from chatbot import BOT_ID
 from chatbot.utils.arh import arq
-from chatbot.utils.pluginhelper import admins_only, edit_or_reply
+from chatbot.utils import admins_only, edit_or_reply
 from chatbot import cb
 
 translator = google_translator()
@@ -196,12 +196,12 @@ async def sasuke(client, message):
 
     # Kang with the credits bitches @InukaASiTH
 
-    test = test.replace("Naoto")
-    test = test.replace("naoto")
+    test = test.replace("Naoto", "naoto")
+    test = test.replace("naoto", "naoto")
     
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Naoto")
-    response = response.replace("naoto")
+    response = response.replace("Naoto", "naoto")
+    response = response.replace("naoto", "naoto")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -267,11 +267,11 @@ async def chat(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("Naoto")
-    test = test.replace("naoto")
+    test = test.replace("Naoto", "naoto")
+    test = test.replace("naoto", "naoto")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Naoto")
-    response = response.replace("naoto")
+    response = response.replace("Naoto", "naoto")
+    response = response.replace("naoto", "naoto")
 
     pro = response
     if not "en" in lan and not lan == "":
