@@ -53,7 +53,7 @@ en_chats = []
     & ~filters.edited
     & ~filters.via_bot
     & ~filters.forwarded,
-    group=8,
+    group=2,
 )
 async def chatbot_function(client, message):
     if not message.reply_to_message:
@@ -153,9 +153,9 @@ async def chatbot_function(client, message):
     & ~filters.edited
     & ~filters.via_bot
     & ~filters.forwarded,
-    group=8,
+    group=2,
 )
-async def sasuke(client, message):
+async def lol(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
