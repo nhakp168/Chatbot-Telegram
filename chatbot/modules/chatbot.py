@@ -46,52 +46,6 @@ en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 @cb.on_message(
-    filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
-)
-@admins_only
-async def chatbot_status(_, message):
-    global cb_chats
-    if len(message.command) != 2:
-        await message.reply_text(
-            "I only recognize `/chatbot on` and /chatbot `off only`"
-        )
-        message.continue_propagation()
-    status = message.text.split(None, 1)[1]
-    chat_id = message.chat.id
-    if status == "ON" or status == "on" or status == "On":
-        lel = await edit_or_reply(message, "`Processing...`")
-        lol = add_chat(int(message.chat.id))
-        if not lol:
-            await lel.edit("Chat Bot Already Activated In This Chat")
-            return
-        await lel.edit(
-            f"Chat Bot Successfully Added For Users In The Chat {message.chat.id}"
-        )
-
-    elif status == "OFF" or status == "off" or status == "Off":
-        lel = await edit_or_reply(message, "`Processing...`")
-        Escobar = remove_chat(int(message.chat.id))
-        if not Escobar:
-            await lel.edit("Chat Bot Was Not Activated In This Chat")
-            return
-        await lel.edit(
-            f"Chat Bot Successfully Deactivated For Users In The Chat {message.chat.id}"
-        )
-
-    elif status == "EN" or status == "en" or status == "english":
-        if not chat_id in en_chats:
-            en_chats.append(chat_id)
-            await message.reply_text("English Only chat bot Enabled!")
-            return
-        await message.reply_text("Chat Bot Is Already Disabled.")
-        message.continue_propagation()
-    else:
-        await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only"
-        )
-
-
-@cb.on_message(
     filters.text
     & filters.reply
     & ~filters.bot
@@ -101,8 +55,6 @@ async def chatbot_status(_, message):
     group=2,
 )
 async def chatbot_function(client, message):
-    if not get_session(int(message.chat.id)):
-        return
     if not message.reply_to_message:
         return
     try:
