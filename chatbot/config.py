@@ -1,6 +1,6 @@
 class Config(object):
-    API_HASH = "58d810fbe8e9532bba0e73644ed55e62"
-    APP_ID = "3719337"
-    TOKEN = "1850884800:AAHJH0qDu5v9ATc56E9PzMxwhrzLSA8f4ZE"
-    BOT_ID = "1850884800"
-    OWNER_ID = "1673590596"
+    API_HASH = "api hash"
+    APP_ID = "apiid"
+    TOKEN = "token bot"
+    BOT_ID = "id bot"
+    OWNER_ID = "owner id"
